@@ -1,9 +1,10 @@
-{
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
+    "windowsAuthentication": false, 
+    "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:61667/",
+      "applicationUrl": "http://localhost:52317",
       "sslPort": 0
     }
   },
@@ -11,19 +12,19 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/Player/GetAllPlayers",
+      "launchUrl": "api/players",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Services.Api": {
+    "PlayersOfDotNet.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/Player/GetAllPlayers",
+      "launchUrl": "api/players",
+      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:61668/"
+      }
     }
   }
 }

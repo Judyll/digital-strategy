@@ -1,11 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Services.Api.Context;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using PlayersOfDotNet.API.Models;
 
-namespace Services.Api
+namespace PlayersOfDotNet.API
 {
     public class Startup
     {
@@ -19,9 +26,11 @@ namespace Services.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PlayerContext>(opt =>
-                opt.UseInMemoryDatabase("PlayerDb"));
-            services.AddMvc();
+            // Add reference to the PlayerContext and use in-memory database
+            services.AddDbContext<PlayerContext>(opts =>
+                opts.UseInMemoryDatabase("PlayerDb"));
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

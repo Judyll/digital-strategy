@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Services.Api.Models;
 
-namespace Services.Api.Context
+namespace PlayersOfDotNet.API.Models
 {
     public class PlayerContext : DbContext
     {
